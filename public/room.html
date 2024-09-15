@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="room.js" async></script>
+  </head>
+  <body>
+    <div class="video-grid" id="videos" length="1">
+      <div class="video-container">
+        <video id="localVideo" autoplay muted playsinline></video>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="control-btn mic-btn" toggle="On" id="mic">🎤</button>
+      <button class="control-btn cam-btn" toggle="On" id="cam">📷</button>
+      <button class="control-btn leave-btn" onclick="location.href='/'">
+        🔴 Leave
+      </button>
+    </div>
+    <div id="room-full">
+      <div>
+        <h1>Room is full</h1>
+        <h3>Try another room or try again later</h3>
+        <button class="control-btn leave-btn" onclick="location.href='/'">
+          Go back
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

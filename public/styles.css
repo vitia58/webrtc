@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  overflow: hidden;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 5px));
+  grid-template-rows: repeat(2, calc(50% - 50px));
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transition: 1s;
+}
+
+.video-grid[length='1'],.video-grid[length='2'] {
+  grid-template-columns: repeat(2, calc(100% - 5px));
+  grid-template-rows: repeat(2, calc(100% - 100px));
+}
+
+.video-grid:not([length='1']) .video-container:nth-child(1){
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 350px;
+  height: 175px;
+  z-index: 2;
+  background-color: #111;
+  border: #0008 1px solid;
+}
+
+.video-grid[length='3'] {
+  grid-template-rows: repeat(2, calc(100% - 100px));
+}
+
+.video-grid[length='4'] {
+  grid-template-columns: repeat(2, calc(50% - 5px));
+}
+
+.video-container {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+video {
+  object-fit: contain; /* Ensure the video fits within the container without cropping */
+  height: 100%;
+}
+
+.controls {
+  gap: 20px;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 200px);
+  right: calc(50% - 200px);
+  display: flex;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.control-btn[toggle='On'] {
+  background-color: #080;
+}
+
+.control-btn[toggle='Off'] {
+  background-color: #f00;
+}
+
+.control-btn[toggle='On']:hover {
+  background-color: #040;
+}
+
+.control-btn[toggle='Off']:hover {
+  background-color: #a00;
+}
+
+.mic-btn,
+.cam-btn {
+  background-color: #333;
+}
+
+.leave-btn {
+  background-color: red;
+  font-size: 16px;
+  color: white;
+}
+
+.leave-btn:hover {
+  background-color: #a00;
+}
+
+#room-full {
+  position: fixed;
+  background-color: #0008;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#room-full div {
+  display: block;
+  text-align: center;
+}
+
+#room-full h1 {
+  font-size: 36px;
+  color: #fff;
+}
+#room-full h3 {
+  font-size: 24px;
+  color: #fff;
+}

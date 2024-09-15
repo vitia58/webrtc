@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.room-button {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+.room-button:hover {
+  background-color: #0056b3;
+}
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  grid-column: 1 / -1;
+}
+.or-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+  color: #555;
+}
+.open-modal-btn {
+  grid-column: 1 / -1;
+  display: block;
+  padding: 12px;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.open-modal-btn:hover {
+  background-color: #218838;
+}
+.modal {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 500ms;
+}
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px;
+}
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.modal-content .createButton {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.modal-content .createButton:hover {
+  background-color: #218838;
+}
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+.close-btn:hover {
+  background-color: #c82333;
+}

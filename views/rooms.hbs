@@ -1,0 +1,33 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Rooms</title>
+    <link rel='stylesheet' href='rooms.css' />
+    <script src="rooms.js" async></script>
+  </head>
+  <body>
+    <div class='room-grid'>
+      <h2>Select a Room</h2>
+
+      {{#if rooms.length}}
+        {{#each rooms}}
+          <a href='/room?room={{name}}' class='room-button'>{{name}} ({{usersCount}}/5)</a>
+        {{/each}}
+
+        <div class='or-text'>Or</div>
+      {{/if}}
+
+      <button class='open-modal-btn' onclick='openModal()'>Create new</button>
+    </div>
+
+    <div id='myModal' class='modal'>
+      <div class='modal-content'>
+        <button class='close-btn' onclick='closeModal()'>X</button>
+        <h3>Create a New Room</h3>
+        <input type='text' id='newRoomName' placeholder='Enter room name' />
+        <button class='createButton' onclick='createRoom()'>Create</button>
+      </div>
+    </div>
+  </body>
+</html>
